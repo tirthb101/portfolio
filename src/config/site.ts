@@ -15,10 +15,11 @@ export const siteConfig = {
     {
       label: "Blog",
       href: "/blog",
-    },  {
-      label: "Projects",
-      href: "/projects",
     },
+    // {
+    //   label: "Projects",
+    //   href: "/projects",
+    // },
   ],
   navMenuItems: [
     {

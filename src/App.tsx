@@ -3,7 +3,7 @@ import { Toaster } from "sonner"; // ✅ Import toast provider
 
 import IndexPage from "@/pages/index";
 import BlogPage from "@/pages/blog";
-import AboutPage from "@/pages/about";
+import AboutPage from "@/components/about";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         <Route element={<IndexPage />} path="/" />
         <Route element={<BlogPage />} path="/blog" />
         <Route element={<AboutPage />} path="/about" />
+        {/* <Route element={<Projects />} path="/projects" /> */}
       </Routes>
     </>
   );

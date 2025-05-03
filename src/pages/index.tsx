@@ -22,8 +22,8 @@ export default function IndexPage() {
   return (
     <DefaultLayout>
       <div style={{ zIndex: 1, position: "relative" }}>
-        <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-          <div className="inline-block max-w-lg text-center justify-center">
+        <section className="flex flex-col items-center justify-center gap-6 py-8 md:py-10 px-4">
+          <div className="inline-block max-w-lg text-center">
             <span className={title()}>Tirth&nbsp;</span>
             <span className={title()}>Bhatiya&nbsp;</span>
             <br />
@@ -31,8 +31,10 @@ export default function IndexPage() {
             <span className={title()}>Graduate</span>
             <div className={subtitle({ class: "mt-4" })}>SVIT Vasad</div>
           </div>
-          <div className="flex gap-3">
-            {/* Email Copy Button */}
+
+          {/* Buttons with wrapping on mobile */}
+          <div className="flex flex-wrap gap-3 justify-center">
+            {/* Email Button */}
             <Tooltip
               content={copied === "email" ? "Copied!" : "Copy email address"}
             >
@@ -49,7 +51,7 @@ export default function IndexPage() {
               </Button>
             </Tooltip>
 
-            {/* Phone Copy Button */}
+            {/* Phone Button */}
             <Tooltip
               content={copied === "phone" ? "Copied!" : "Copy phone number"}
             >
@@ -65,23 +67,26 @@ export default function IndexPage() {
           </div>
 
           {/* Code Snippet */}
-          <div className="mt-8">
+          <div className="mt-8 w-full max-w-md">
             <Snippet hideCopyButton hideSymbol variant="bordered">
-              <span>
-                Open to Roles Such As{" "}
-                <Code color="primary">Software Developer</Code> &nbsp;
-                <Code color="primary">Machine Learning</Code> and{" "}
-                <Code color="primary"> Backend Development</Code>
+              <span className="flex flex-wrap gap-1 justify-center text-sm sm:text-base">
+                Open to Roles Such As
+                <Code color="primary">Software Developer</Code>
+                <Code color="primary">Machine Learning</Code>
+                <Code color="primary">Backend Development</Code>
               </span>
             </Snippet>
           </div>
         </section>
       </div>
+
+      {/* Rest remains the same */}
+
       {/* Background Component */}
       <EnhancedSpaceTimeGrid />
 
       {/* Contextual Text for the Space-Time Animation */}
-      <section className="text-center mt-20 px-4 mb-20">
+      <section className="text-center mt-[140px] px-4 mb-[110px]">
         <h2 className="text-2xl font-semibold text-violet-600">
           Exploring the Fabric of Code & Time
         </h2>

@@ -20,7 +20,7 @@ export default function DefaultLayout({
           href="https://linkedin.com/in/tirth-bhatia"
           title="heroui.com homepage"
         >
-          <p className="text-primary">©2025 All Rights Reserved</p>
+          <p className="text-default">©2025 All Rights Reserved</p>
         </Link>
       </footer>
     </div>
