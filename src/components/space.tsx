@@ -19,7 +19,7 @@ export default function EnhancedSpaceTimeGrid(): JSX.Element {
       // Example: shift wave origin with scroll
       setMousePos((prev) => ({
         x: prev.x,
-        y: 300 + Math.sin(scrollY / 100) * 50, // adjust as needed
+        y: 300 + Math.sin(scrollY / 100) * 400, // adjust as needed
       }));
     };
 
@@ -428,7 +428,7 @@ export default function EnhancedSpaceTimeGrid(): JSX.Element {
   return (
     <div
       ref={containerRef}
-      className="w-full h-screen bg-gradient-to-b from-black via-gray-900 to-blue-950 relative overflow-hidden touch-none"
+      className="w-full h-screen bg-gradient-to-b from-black via-gray-900 to-blue-950 relative overflow-hidden pan-y"
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
     >
