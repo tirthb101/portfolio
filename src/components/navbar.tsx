@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "@heroui/link";
 import { Menu, X, SunMoon } from "lucide-react";
 import { Button } from "@heroui/button";
+
 import { ThemeSwitch } from "@/components/theme-switch";
 
 export default function Navbar() {
@@ -11,7 +12,6 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 shadow-md border-b border-border">
-
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-3">
           <Link className="text-xl font-bold" href="/">
@@ -29,15 +29,18 @@ export default function Navbar() {
           <Link className="hover:text-primary transition-colors" href="/blog">
             Blogs
           </Link>
-          <Link className="hover:text-primary transition-colors" href="/projects">
+          <Link
+            className="hover:text-primary transition-colors"
+            href="/projects"
+          >
             Projects
           </Link>
           {/* Desktop Theme Switch */}
           <ThemeSwitch
-            className="flex"
-            onClick={ThemeSwitch}
-            icon={<SunMoon className="h-5 w-5" />}
             aria-label="Toggle theme"
+            className="flex"
+            icon={<SunMoon className="h-5 w-5" />}
+            onClick={ThemeSwitch}
           />
         </nav>
 
@@ -50,26 +53,38 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-{isOpen && (
-  <div className="md:hidden bg-background/90 backdrop-blur-md border-t">
-    <nav className="flex flex-col items-center gap-4 py-4">
-      <Link className="hover:text-primary transition-colors" href="/">Home</Link>
-      <Link className="hover:text-primary transition-colors" href="/">About</Link>
-      <Link className="hover:text-primary transition-colors" href="/blog">Blogs</Link>
-      <Link className="hover:text-primary transition-colors" href="/projects">Projects</Link>
+      {isOpen && (
+        <div className="md:hidden bg-background/90 backdrop-blur-md border-t">
+          <nav className="flex flex-col items-center gap-4 py-4">
+            <Link className="hover:text-primary transition-colors" href="/">
+              Home
+            </Link>
+            <Link className="hover:text-primary transition-colors" href="/">
+              About
+            </Link>
+            <Link className="hover:text-primary transition-colors" href="/blog">
+              Blogs
+            </Link>
+            <Link
+              className="hover:text-primary transition-colors"
+              href="/projects"
+            >
+              Projects
+            </Link>
 
-      {/* Proper Toggle Theme Button */}
-      <button
-        className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
-        onClick={() => {/* your toggle function here */}}
-      >
-        <SunMoon className="h-5 w-5" />
-        Toggle Theme
-      </button>
-    </nav>
-  </div>
-)}
-
+            {/* Proper Toggle Theme Button */}
+            <button
+              className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+              onClick={() => {
+                /* your toggle function here */
+              }}
+            >
+              <SunMoon className="h-5 w-5" />
+              Toggle Theme
+            </button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
