@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Link } from "@heroui/link";
-import { Menu, X, SunMoon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@heroui/button";
 
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -36,12 +36,7 @@ export default function Navbar() {
             Projects
           </Link>
           {/* Desktop Theme Switch */}
-          <ThemeSwitch
-            aria-label="Toggle theme"
-            className="flex"
-            icon={<SunMoon className="h-5 w-5" />}
-            onClick={ThemeSwitch}
-          />
+          <ThemeSwitch aria-label="Toggle theme" className="flex" />
         </nav>
 
         {/* Hamburger menu */}
@@ -73,15 +68,10 @@ export default function Navbar() {
             </Link>
 
             {/* Proper Toggle Theme Button */}
-            <button
+            <ThemeSwitch
+              aria-label="Toggle theme"
               className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
-              onClick={() => {
-                /* your toggle function here */
-              }}
-            >
-              <SunMoon className="h-5 w-5" />
-              Toggle Theme
-            </button>
+            />
           </nav>
         </div>
       )}
