@@ -1,75 +1,75 @@
+"use client";
+
+import { useState } from "react";
 import { Link } from "@heroui/link";
-import {
-  Navbar as HeroUINavbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-} from "@heroui/navbar";
-import { link as linkStyles } from "@heroui/theme";
-import clsx from "clsx";
-import { LinkedinIcon } from "lucide-react";
-
-import { siteConfig } from "@/config/site";
+import { Menu, X, SunMoon } from "lucide-react";
+import { Button } from "@heroui/button";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { LeetCodeIcon, PortfolioIcon } from "@/components/icons";
-import { GithubIcon } from "@/components/icons";
 
-export const Navbar = () => {
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand className="gap-3 max-w-fit">
-          <Link
-            className="flex justify-start items-center gap-1"
-            color="foreground"
-            href="/"
-          >
-            <PortfolioIcon />
-            <p className="font-bold text-inherit">Tirth Bhatiya</p>
+    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 shadow-md border-b border-border">
+
+      <div className="container mx-auto flex items-center justify-between px-6 py-4">
+        <div className="flex items-center gap-3">
+          <Link className="text-xl font-bold" href="/">
+            Tirth.dev
           </Link>
-        </NavbarBrand>
-        <div className="hidden lg:flex gap-4 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <Link
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
-                )}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </Link>
-            </NavbarItem>
-          ))}
         </div>
-      </NavbarContent>
 
-      <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="end"
+        <nav className="hidden md:flex items-center gap-6">
+          <Link className="hover:text-primary transition-colors" href="/">
+            Home
+          </Link>
+          <Link className="hover:text-primary transition-colors" href="#about">
+            About
+          </Link>
+          <Link className="hover:text-primary transition-colors" href="/blog">
+            Blogs
+          </Link>
+          <Link className="hover:text-primary transition-colors" href="/projects">
+            Projects
+          </Link>
+          {/* Desktop Theme Switch */}
+          <ThemeSwitch
+            className="flex"
+            onClick={ThemeSwitch}
+            icon={<SunMoon className="h-5 w-5" />}
+            aria-label="Toggle theme"
+          />
+        </nav>
+
+        {/* Hamburger menu */}
+        <div className="md:hidden">
+          <Button size="sm" variant="ghost" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+{isOpen && (
+  <div className="md:hidden bg-background/90 backdrop-blur-md border-t">
+    <nav className="flex flex-col items-center gap-4 py-4">
+      <Link className="hover:text-primary transition-colors" href="/">Home</Link>
+      <Link className="hover:text-primary transition-colors" href="/">About</Link>
+      <Link className="hover:text-primary transition-colors" href="/blog">Blogs</Link>
+      <Link className="hover:text-primary transition-colors" href="/projects">Projects</Link>
+
+      {/* Proper Toggle Theme Button */}
+      <button
+        className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+        onClick={() => {/* your toggle function here */}}
       >
-        <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal href={siteConfig.links.linkedin} title="LinkedIn">
-            <LinkedinIcon className="text-default-500" />
-          </Link>
-          <Link isExternal href={siteConfig.links.leetcode} title="LeetCode">
-            <LeetCodeIcon className="text-default-500" />
-          </Link>
-          <Link isExternal href={siteConfig.links.github} title="GitHub">
-            <GithubIcon className="text-default-500" />
-          </Link>
-          <ThemeSwitch />
-        </NavbarItem>
-      </NavbarContent>
+        <SunMoon className="h-5 w-5" />
+        Toggle Theme
+      </button>
+    </nav>
+  </div>
+)}
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
-        <ThemeSwitch />
-      </NavbarContent>
-    </HeroUINavbar>
+    </header>
   );
-};
+}

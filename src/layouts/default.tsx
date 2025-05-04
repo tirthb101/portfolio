@@ -1,6 +1,6 @@
 import { Link } from "@heroui/link";
 
-import { Navbar } from "@/components/navbar";
+import Navbar from "@/components/navbar";
 
 export default function DefaultLayout({
   children,
@@ -8,20 +8,22 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative flex flex-col h-screen">
+    <div className="relative flex min-h-screen flex-col">
       <Navbar />
-      <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16">
+      <main className="flex-grow container mx-auto max-w-7xl px-6 pt-16">
         {children}
       </main>
-      <footer className="w-full flex items-center justify-center py-3">
-        <Link
-          isExternal
-          className="flex items-center gap-1 text-current"
-          href="https://linkedin.com/in/tirth-bhatia"
-          title="heroui.com homepage"
-        >
-          <p className="text-default">©2025 All Rights Reserved</p>
-        </Link>
+      <footer className="w-full py-6 mt-12 border-t">
+        <div className="container mx-auto flex flex-col items-center justify-center gap-2 px-6 text-center text-sm text-muted-foreground">
+          <Link
+            isExternal
+            className="flex items-center gap-1 hover:text-primary transition-colors"
+            href="https://linkedin.com/in/tirth-bhatia"
+            title="Visit my LinkedIn profile"
+          >
+            <span>© 2025 Tirth Bhatia. All Rights Reserved.</span>
+          </Link>
+        </div>
       </footer>
     </div>
   );

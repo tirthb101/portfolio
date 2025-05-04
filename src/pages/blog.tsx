@@ -1,7 +1,6 @@
 import { CalendarDays } from "lucide-react";
 
 import { title } from "@/components/primitives";
-import DefaultLayout from "@/layouts/default";
 
 export default function DocsPage() {
   const blogs = [
@@ -38,35 +37,33 @@ export default function DocsPage() {
   ];
 
   return (
-    <DefaultLayout>
-      <section className="flex flex-col items-center justify-center py-14 px-6">
-        <div className="text-center max-w-2xl mb-12">
-          <h1 className={title()}>Blog</h1>
-          <p className="text-base text-muted-foreground mt-2">
-            Sample blog posts covering core concepts in Machine Learning, model
-            compression, and deployment.
-          </p>
-        </div>
+    <section className="flex flex-col items-center justify-center py-14 px-6">
+      <div className="text-center max-w-2xl mb-12">
+        <h1 className={title()}>Blog</h1>
+        <p className="text-base text-muted-foreground mt-2">
+          Sample blog posts covering core concepts in Machine Learning, model
+          compression, and deployment.
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
-          {blogs.map((blog, index) => (
-            <div
-              key={index}
-              className="relative border rounded-2xl p-6 shadow-md bg-background/60 backdrop-blur-md hover:shadow-lg transition-all duration-300 group"
-            >
-              <h2 className="text-xl font-semibold text-primary group-hover:underline">
-                {blog.title}
-              </h2>
-              <p className="mt-3 text-muted-foreground leading-relaxed">
-                {blog.excerpt}
-              </p>
-              <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-                <CalendarDays size={16} /> {blog.date}
-              </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
+        {blogs.map((blog, index) => (
+          <div
+            key={index}
+            className="relative border rounded-2xl p-6 shadow-md bg-background/60 backdrop-blur-md hover:shadow-lg transition-all duration-300 group"
+          >
+            <h2 className="text-xl font-semibold text-primary group-hover:underline">
+              {blog.title}
+            </h2>
+            <p className="mt-3 text-muted-foreground leading-relaxed">
+              {blog.excerpt}
+            </p>
+            <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
+              <CalendarDays size={16} /> {blog.date}
             </div>
-          ))}
-        </div>
-      </section>
-    </DefaultLayout>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }

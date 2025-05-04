@@ -12,6 +12,22 @@ interface Dimensions {
 }
 
 export default function EnhancedSpaceTimeGrid(): JSX.Element {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      // Example: shift wave origin with scroll
+      setMousePos((prev) => ({
+        x: prev.x,
+        y: 300 + Math.sin(scrollY / 100) * 50, // adjust as needed
+      }));
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [mousePos, setMousePos] = useState<MousePosition>({ x: 0, y: 0 });
   const [dimensions, setDimensions] = useState<Dimensions>({
@@ -412,7 +428,7 @@ export default function EnhancedSpaceTimeGrid(): JSX.Element {
   return (
     <div
       ref={containerRef}
-      className="w-full h-screen bg-gradient-to-b from-black via-gray-900 to-blue-950 relative overflow-hidden"
+      className="w-full h-screen bg-gradient-to-b from-black via-gray-900 to-blue-950 relative overflow-hidden touch-none"
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
     >
