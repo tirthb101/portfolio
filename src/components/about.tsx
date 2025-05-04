@@ -84,7 +84,7 @@ export default function AboutPage() {
               <User className="text-primary" />
               <h2 className="text-xl font-bold">Biography</h2>
             </div>
-            <p className="text-default-600">
+            <p className="text-default-600 text-justify">
               I&apos;m a Computer Engineering graduate from SVIT Vasad with a
               strong foundation in programming, data structures, and algorithms.
               I&apos;m passionate about software development with particular
