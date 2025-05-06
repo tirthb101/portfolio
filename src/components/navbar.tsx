@@ -23,7 +23,17 @@ export default function Navbar() {
           <Link className="hover:text-primary transition-colors" href="/">
             Home
           </Link>
-          <Link className="hover:text-primary transition-colors" href="#about">
+          <Link
+            className="hover:text-primary transition-colors"
+            href="/"
+            onClick={() => {
+              const aboutElement = document.getElementById("about");
+
+              if (aboutElement) {
+                aboutElement.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             About
           </Link>
           <Link className="hover:text-primary transition-colors" href="/blog">
@@ -54,7 +64,17 @@ export default function Navbar() {
             <Link className="hover:text-primary transition-colors" href="/">
               Home
             </Link>
-            <Link className="hover:text-primary transition-colors" href="/">
+            <Link
+              className="hover:text-primary transition-colors"
+              href="/"
+              onClick={() => {
+                const aboutElement = document.getElementById("about");
+
+                if (aboutElement) {
+                  aboutElement.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               About
             </Link>
             <Link className="hover:text-primary transition-colors" href="/blog">

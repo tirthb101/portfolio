@@ -90,7 +90,7 @@ export default function IndexPage() {
           for discovering patterns, solving problems, and building systems that
           flow seamlessly.
         </p>
-        <div id="targetSection" />
+        <div id="about" />
       </section>
 
       {/* About Page */}
