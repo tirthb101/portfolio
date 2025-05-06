@@ -20,7 +20,17 @@ export default function Navbar() {
         </div>
 
         <nav className="hidden md:flex items-center gap-6">
-          <Link className="hover:text-primary transition-colors" href="/">
+          <Link
+            className="hover:text-primary transition-colors"
+            href="/"
+            onClick={() => {
+              const aboutElement = document.body;
+
+              if (aboutElement) {
+                aboutElement.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             Home
           </Link>
           <Link
@@ -36,12 +46,29 @@ export default function Navbar() {
           >
             About
           </Link>
-          <Link className="hover:text-primary transition-colors" href="/blog">
+          <Link
+            className="hover:text-primary transition-colors"
+            href="/blog"
+            onClick={() => {
+              const aboutElement = document.body;
+
+              if (aboutElement) {
+                aboutElement.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             Blogs
           </Link>
           <Link
             className="hover:text-primary transition-colors"
             href="/projects"
+            onClick={() => {
+              const aboutElement = document.body;
+
+              if (aboutElement) {
+                aboutElement.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
             Projects
           </Link>
@@ -61,7 +88,17 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-background/90 backdrop-blur-md border-t">
           <nav className="flex flex-col items-center gap-4 py-4">
-            <Link className="hover:text-primary transition-colors" href="/">
+            <Link
+              className="hover:text-primary transition-colors"
+              href="/"
+              onClick={() => {
+                const aboutElement = document.body;
+
+                if (aboutElement) {
+                  aboutElement.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               Home
             </Link>
             <Link
@@ -77,12 +114,29 @@ export default function Navbar() {
             >
               About
             </Link>
-            <Link className="hover:text-primary transition-colors" href="/blog">
+            <Link
+              className="hover:text-primary transition-colors"
+              href="/blog"
+              onClick={() => {
+                const aboutElement = document.body;
+
+                if (aboutElement) {
+                  aboutElement.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               Blogs
             </Link>
             <Link
               className="hover:text-primary transition-colors"
               href="/projects"
+              onClick={() => {
+                const aboutElement = document.body;
+
+                if (aboutElement) {
+                  aboutElement.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
             >
               Projects
             </Link>
