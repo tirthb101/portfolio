@@ -97,6 +97,7 @@ export default function Navbar() {
                 if (aboutElement) {
                   aboutElement.scrollIntoView({ behavior: "smooth" });
                 }
+                setIsOpen(false);
               }}
             >
               Home
@@ -110,6 +111,7 @@ export default function Navbar() {
                 if (aboutElement) {
                   aboutElement.scrollIntoView({ behavior: "smooth" });
                 }
+                setIsOpen(false);
               }}
             >
               About
@@ -123,6 +125,7 @@ export default function Navbar() {
                 if (aboutElement) {
                   aboutElement.scrollIntoView({ behavior: "smooth" });
                 }
+                setIsOpen(false);
               }}
             >
               Blogs
@@ -136,6 +139,7 @@ export default function Navbar() {
                 if (aboutElement) {
                   aboutElement.scrollIntoView({ behavior: "smooth" });
                 }
+                setIsOpen(false);
               }}
             >
               Projects
