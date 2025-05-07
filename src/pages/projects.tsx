@@ -103,7 +103,7 @@ export default function ProjectsPage() {
                 <h3 className="text-2xl font-semibold mb-3 text-black dark:text-white">
                   {project.title}
                 </h3>
-                <p className="text-base text-neutral-700 dark:text-neutral-300">
+                <p className="text-base text-neutral-700 dark:text-neutral-300 text-justify">
                   {project.description}
                 </p>
               </CardBody>

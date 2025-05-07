@@ -84,7 +84,7 @@ export default function IndexPage() {
         <h2 className="text-3xl md:text-4xl font-bold text-violet-600">
           Exploring the Fabric of Code & Time
         </h2>
-        <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-lg">
+        <p className="mt-4 text-gray-600 max-w-2xl mx-auto text-lg text-justify">
           Just like the complexities of space-time, I believe technology is a
           dynamic, evolving field. This animated background reflects my passion
           for discovering patterns, solving problems, and building systems that
