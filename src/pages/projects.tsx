@@ -8,7 +8,7 @@ const projects = [
     description:
       "Built at ERDA internship. Uses VectorDB, embedding algorithms, and local LLMs to generate Q&A from PDFs, Docs, and Webpages.",
     link: "#",
-    screenshot: "/screenshots/rag.png",
+    screenshot: "/rag.png",
   },
   {
     title: "Sorting Visualizer",
