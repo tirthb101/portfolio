@@ -1,5 +1,5 @@
-import React from "react";
 import { Card, CardBody } from "@heroui/card";
+
 import { title } from "@/components/primitives";
 
 const projects = [
@@ -56,9 +56,11 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <section className="container mx-auto px-6 py-16 text-white dark:text-white" id="projects">
-
-       <div className="text-center max-w-3xl mx-auto">
+    <section
+      className="container mx-auto px-6 py-16 text-white dark:text-white"
+      id="projects"
+    >
+      <div className="text-center max-w-3xl mx-auto">
         {/* Heading Section */}
         <h1
           className={`${title()} text-4xl sm:text-5xl font-semibold text-primary mb-6`}
@@ -81,25 +83,26 @@ export default function ProjectsPage() {
               key={index}
               className="overflow-hidden shadow-xl rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700"
             >
-              {(hasValidLink || hasValidScreenshot) && (
-                hasValidLink ? (
+              {(hasValidLink || hasValidScreenshot) &&
+                (hasValidLink ? (
                   <div className="w-full h-[400px] overflow-hidden bg-black">
                     <iframe
+                      className="w-[150%] h-[600px] scale-[0.67] origin-top-left border-none"
                       src={project.link}
                       title={project.title}
-                      className="w-[150%] h-[600px] scale-[0.67] origin-top-left border-none"
-                    ></iframe>
+                    />
                   </div>
                 ) : (
                   <img
-                    src={project.screenshot}
                     alt={project.title}
                     className="w-full h-[400px] object-contain bg-black"
+                    src={project.screenshot}
                   />
-                )
-              )}
+                ))}
               <CardBody className="p-6">
-                <h3 className="text-2xl font-semibold mb-3 text-black dark:text-white">{project.title}</h3>
+                <h3 className="text-2xl font-semibold mb-3 text-black dark:text-white">
+                  {project.title}
+                </h3>
                 <p className="text-base text-neutral-700 dark:text-neutral-300">
                   {project.description}
                 </p>

@@ -9,7 +9,6 @@ import { title, subtitle } from "@/components/primitives";
 import { PhoneIcon, MailIcon } from "@/components/icons";
 import EnhancedSpaceTimeGrid from "@/components/space";
 import AboutPage from "@/components/about";
-import ProjectsPage from "./projects";
 
 export default function IndexPage() {
   const copied = useState<"email" | "phone" | null>(null)[0];
