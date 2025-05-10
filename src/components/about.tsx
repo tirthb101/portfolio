@@ -85,12 +85,19 @@ export default function AboutPage() {
               <h2 className="text-xl font-bold">Biography</h2>
             </div>
             <p className="text-default-600 text-justify">
-              I&apos;m a Computer Engineering graduate from SVIT Vasad with a
+              {/* I&apos;m a Computer Engineering graduate from SVIT Vasad with a
               strong foundation in programming, data structures, and algorithms.
               I&apos;m passionate about software development with particular
               interests in AI, machine learning, and web development. My
               experience spans from web applications to AI-driven solutions,
-              including RAG systems and predictive maintenance models.
+              including RAG systems and predictive maintenance models. */}
+              I am Tirth Bhatiya. I completed my engineering from SVIT Vasad. I
+              have a keen interest in using technology to solve real-world
+              problems and possess a strong foundational understanding of
+              computer science, machine learning, algorithms, and data
+              structures. I am ready and capable of taking on roles such as
+              backend developer, machine learning engineer, data analyst, or
+              full stack developer.
             </p>
           </div>
 
