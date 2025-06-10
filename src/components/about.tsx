@@ -91,7 +91,7 @@ export default function AboutPage() {
               interests in AI, machine learning, and web development. My
               experience spans from web applications to AI-driven solutions,
               including RAG systems and predictive maintenance models. */}
-              I am Tirth Bhatiya. I completed my engineering from SVIT Vasad. I
+              I am Tirth Bhatiya. I completed my engineering from GTU in 2025. I
               have a keen interest in using technology to solve real-world
               problems and possess a strong foundational understanding of
               computer science, machine learning, algorithms, and data
@@ -111,9 +111,9 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-semibold">BE in Computer Engineering</h3>
                 <p className="text-sm text-default-500">
-                  SVIT VASAD • May 2025
+                  GTU • May 2025
                 </p>
-                <p className="mt-1 text-default-600">CGPA: 8.6/10</p>
+                <p className="mt-1 text-default-600">CGPA: 8.8/10</p>
               </div>
               <div>
                 <h3 className="font-semibold">High School</h3>
